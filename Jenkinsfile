@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 script {
-                    docker.build('myalpine')
+                    docker.build('mybusybox').push()
                 }
             }
         }
