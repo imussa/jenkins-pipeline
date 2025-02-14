@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                docker.build('myalpine')
+                script {
+                    docker.build('myalpine')
+                }
             }
         }
     }
