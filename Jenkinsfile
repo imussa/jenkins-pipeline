@@ -10,8 +10,10 @@ pipeline {
 
         stage('Build') {
             steps {
-                docker.image('centos:7.9.2009') {
-                    sh 'uname -a'
+                script {
+                    docker.image('centos:7.9.2009') {
+                        sh 'uname -a'
+                    }
                 }
             }
         }
