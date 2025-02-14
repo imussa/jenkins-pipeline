@@ -4,17 +4,9 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
+        stage('Hello') {
             steps {
-                checkout scm
-            }
-        }
-
-        stage('Build') {
-            steps {
-                docker.image('centos:7.9.2009').inside {
-                    sh 'hostname'
-                }
+                echo 'Hello World'
             }
         }
     }
