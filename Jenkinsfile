@@ -1,12 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        docker { 'centos:7.9.2009' }
+    }
 
     stages {
-        // stage('Checkout') {
-        //     steps {
-        //         checkout scm
-        //     }
-        // }
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
 
         stage('Build') {
             steps {
