@@ -1,12 +1,10 @@
 pipeline {
-    agent {
-        docker { image 'centos:7.9.2009' }
-    }
+    agent any
 
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                docker.build('myalpine')
             }
         }
     }
